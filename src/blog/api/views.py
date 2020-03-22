@@ -71,12 +71,12 @@ def api_update_blog_view(request, slug):
                 image_url = image_url[:image_url.rfind("?")]
             data['image'] = image_url
             data['username'] = blog_post.author.username
-            to_json = {
-                "results": data,
-                "success": True,
-                "status": 200
-            }
-            return Response(data=to_json)
+            # to_json = {
+            #     "results": data,
+            #     "success": True,
+            #     "status": 200
+            # }
+            return Response(data=data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
